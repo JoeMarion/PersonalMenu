@@ -22,6 +22,10 @@
   .header-container
     = render 'layouts/header'
 
+  .flash-container
+    - flash.each do |message_type, message|
+      %div{class: "alert-#{message_type} alert"}
+        = message
 
   .app-container
     = yield
